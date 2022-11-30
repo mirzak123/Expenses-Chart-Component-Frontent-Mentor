@@ -1,0 +1,144 @@
+:root {
+    --soft-red: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+    --dark-brown: hsl(25, 47%, 15%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --pale-orange: hsl(33, 100%, 98%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--cream);
+    font-size: 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+p, h2 {
+    margin: 0;
+}
+
+.container {
+    max-width: 375px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.top-card {
+    background-color: var(--soft-red);
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: .9em;
+}
+
+.circles {
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    aspect-ratio: 1;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.hollow-circle {
+    border: 2px solid var(--cream);
+    margin-right: -25%;
+    z-index: 10;
+}
+
+.filled-circle {
+    background-color: black;
+}
+
+.balance {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.main-card {
+    background: var(--pale-orange);
+    border-radius: 8px;
+    color: var(--medium-brown);
+    padding: 1rem;
+}
+
+.spendings-title {
+    margin-bottom: 1em;
+}
+
+.chart {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    min-height: 200px;
+}
+
+.chart__bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+}
+
+.bar {
+    border-radius: 5px;
+    height: 100px;
+    width: 100%;
+    background-color: var(--soft-red);
+}
+
+.bar-wrapper__day {
+    font-size: .8rem;
+    margin-top: 8px;
+}
+
+.horizontal-line {
+    height: 2px;
+    width: 95%;
+    background: var(--cream);
+    margin: 1rem auto;
+}
+
+.main-card__bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.spendings-title,
+.spending,
+.percentage {
+    color: var(--dark-brown);
+    font-weight: 700;
+}
+
+.spending {
+    font-size: 1.8rem;
+}
+
+.info-text {
+    font-size: 1rem;
+}
+
+.percentage-area {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+
+.percentage {
+    align-self: flex-end;
+}

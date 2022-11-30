@@ -4,40 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Expenses chart component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  My balance
-  $921.48
-
-  Spending - Last 7 days
-
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main class="container">
+    <div class="top-card">
+      <div class="balance-area">
+        <p>My balance</p>
+        <p class="balance">$921.48</p>
+      </div>
+      <div class="circles">
+        <div class="circle hollow-circle"></div>
+        <div class="circle filled-circle"></div>
+      </div>
+    </div>
+    <div class="main-card">
+      <h2 class="spendings-title">Spending - Last 7 days</h2>
+      <div class="chart">
+        <div class="chart__bar-wrapper">
+          <div class="bar"></div>
+          <div class="bar-wrapper__day">mon</div>
+        </div>
+        <div class="chart__bar-wrapper">
+          <div class="bar"></div>
+          <div class="bar-wrapper__day">tue</div>
+        </div>
+        <div class="chart__bar-wrapper">
+          <div class="bar"></div>
+          <div class="bar-wrapper__day">wed</div>
+        </div>
+        <div class="chart__bar-wrapper">
+          <div class="bar"></div>
+          <div class="bar-wrapper__day">thu</div>
+        </div>
+        <div class="chart__bar-wrapper">
+          <div class="bar"></div>
+          <div class="bar-wrapper__day">fri</div>
+        </div>
+        <div class="chart__bar-wrapper">
+          <div class="bar"></div>
+          <div class="bar-wrapper__day">sat</div>
+        </div>
+        <div class="chart__bar-wrapper">
+          <div class="bar"></div>
+          <div class="bar-wrapper__day">sun</div>
+        </div>
+      </div>
+      <div class="horizontal-line"></div>
+      <div class="main-card__bottom">
+        <div class="spendings-area">
+          <p class="info-text">Total this month</p>
+          <p class="spending">$478.33</p>
+        </div>
+        <div class="percentage-area">
+          <p class="percentage">+2.4%</p>
+          <p class="info-text">from last month</p>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
+<script src="script.js"></script>
 </html>
