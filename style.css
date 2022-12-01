@@ -92,6 +92,19 @@ p, h2 {
     justify-content: flex-end;
     align-items: center;
     flex: 1;
+    position: relative;
+}
+
+.bar-wrapper__bar-popup {
+    border-radius: 6px;
+    display: none;
+    background: black;
+    opacity: .9;
+    color: white;
+    font-size: 1.1rem;
+    padding: .3em .6em;
+    margin-bottom: .5em;
+    position: absolute;
 }
 
 .bar {
@@ -141,4 +154,36 @@ p, h2 {
 
 .percentage {
     align-self: flex-end;
+}
+
+@media screen and (min-width: 700px) {
+    .container {
+        max-width: 600px;
+    }
+
+    .chart {
+        min-height: 230px;
+        gap: 26px;
+    }
+
+    .chart__bar-wrapper {
+        position: relative;
+    }
+
+    .bar-wrapper__bar-popup {
+        display: block;
+        visibility: hidden;
+    }
+
+    .bar {
+        transition: .15s opacity ease;
+    }
+
+    .chart__bar-wrapper:hover > .bar-wrapper__bar-popup {
+        visibility: visible;
+    }
+
+    .chart__bar-wrapper:hover > .bar {
+        opacity: .8;
+    }
 }

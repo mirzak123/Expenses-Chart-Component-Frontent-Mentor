@@ -1,5 +1,7 @@
 const totalSpendingElement = document.querySelector('.spending');
+const chartBarWrappers = document.querySelectorAll('.chart__bar-wrapper');
 const chartBars = [...document.querySelectorAll('.bar')];
+const chartPopups = [...document.querySelectorAll('.bar-wrapper__bar-popup')];
 
 const maxHeight = 180;
 
@@ -18,26 +20,27 @@ async function makeChart () {
     
     const averageSpending = totalSpending / 7;
     const maxSpending = Math.max(...spendings.map((obj) => obj.amount));
-    
-    for (index in chartBars) {
+
+    chartBarWrappers.forEach((barWrapper, index) => {
+        const bar = barWrapper.querySelector('.bar');
+        const popup = barWrapper.querySelector('.bar-wrapper__bar-popup');
+        
         const amount = spendings[index].amount;
+        popup.textContent = `\$${amount.toFixed(2)}`;
         const height = amount / maxSpending * maxHeight;
-        console.log(height);
-        chartBars[index].style.height = `${height}px`;
+        bar.style.height = `${height}px`;
 
         if (amount === maxSpending)
-            chartBars[index].style.background = `hsl(186, 34%, 60%)`;
-    }
-}
+            bar.style.background = `hsl(186, 34%, 60%)`;
 
-// fetch('./data.json')
-//     .then(blob => blob.json())
-//     .then(spendings => {
-//         let totalSpending = spendings.reduce((accumulator, currentDay) => {
-//             return accumulator + currentDay.amount;
-//         }, 0);
-//         console.log(totalSpending);
-// });
+        let barWrapperOffset = barWrapper.getBoundingClientRect();
+        let barOffset = bar.getBoundingClientRect();
+
+        console.log('wrapper', barWrapperOffset.top);
+        console.log('bar', barOffset.top);
+        popup.style.top = `${barOffset.top - barWrapperOffset.top - 40}px`;
+    });
+}
 
 makeChart();
 
